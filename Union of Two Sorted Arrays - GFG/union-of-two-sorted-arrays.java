@@ -55,18 +55,18 @@ class Solution
     public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m)
     {
         // add your code here
-        HashMap<Integer,Integer> u = new HashMap<>();
+        HashSet<Integer> u = new HashSet<>();
         ArrayList<Integer> res = new ArrayList<>();
         
         for(int i = 0;i<n;i++)
         {
-            u.put(arr1[i],u.getOrDefault(arr1[i],0)+1);
+            u.add(arr1[i]);
         }
         for(int i = 0;i<m;i++)
         {
-            u.put(arr2[i],u.getOrDefault(arr2[i],0)+1);
+            u.add(arr2[i]);
         }
-        for(int it: u.keySet())
+        for(int it: u)
         {
             res.add(it);
         }
