@@ -39,18 +39,14 @@ class Solution{
     long maxSubarraySum(int arr[], int n){
         
         // Your code here
-        long sum = 0;
         long max = Integer.MIN_VALUE;
         for(int i=0;i<arr.length;i++)
         {
-            sum+=arr[i];
-            if(sum>max)
+            long sum = 0;
+            for(int j = i;j<arr.length;j++)
             {
-                max = sum;
-            }
-            if(sum<0)
-            {
-                sum = 0;
+                sum = sum+ arr[j];
+                max = Math.max(max,sum);
             }
         }
         return max;
