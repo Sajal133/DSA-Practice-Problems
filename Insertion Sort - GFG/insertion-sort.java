@@ -42,17 +42,17 @@ class Solution
   //Function to sort the array using insertion sort algorithm.
   public void insertionSort(int arr[], int n)
   {
-      //code here   
-      for(int i = 0;i<=n-1;i++)
-      {
-          int j = i;
-          while(j>0 && arr[j-1]>arr[j])
-          {
-              int temp = arr[j-1];
-              arr[j-1] = arr[j];
-              arr[j] = temp;
-              j--;
-          }
-      }
+      //code here 
+      if (n <= 1) {
+            return;
+        }
+        insertionSort(arr, n - 1);
+        int last = arr[n - 1];
+        int j = n - 2;
+        while (j >= 0 && arr[j] > last) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = last;
   }
 }
