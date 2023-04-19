@@ -14,9 +14,8 @@ class Solution
 	public static void bubbleSort(int arr[], int n)
     {
         //code here
-        for(int i = n-1;i>=0;i--)
-        {
-            int c = 0;
+        int c = 0;
+        if(n==1)return;
             for(int j = 0;j<n-1;j++)
             {
                 if(arr[j]>arr[j+1])
@@ -24,15 +23,14 @@ class Solution
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
-                    c = 1;
+                    c =1;
                 }
             }
-            if(c==0)
+            if(c == 0)
             {
-                break;
+                return;
             }
-            
-        }
+            bubbleSort(arr,n-1);
     }
 }
 
