@@ -66,15 +66,13 @@ class Solution {
         for(int i = 0;i<n;i++)
         {
             res.add(arr[i]);
-        }
         if(res.contains(t))
         {
             return true;
         }
-        else
-        {
-            return false;
         }
+            return false;
+
     }
 }
         
