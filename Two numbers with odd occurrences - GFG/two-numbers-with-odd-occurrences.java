@@ -32,37 +32,37 @@ class GFG{
 //User function Template for Java
 
 //User function Template for Java
-class Solution {
-    public int[] twoOddNum(int Arr[], int N) {
-        int xor = 0;
-        
-        // Calculate XOR of all array elements
-        for (int i = 0; i < N; i++) {
-            xor ^= Arr[i];
+class Solution
+{
+    public int[] twoOddNum(int Arr[], int N)
+    {
+        // code here
+        int res[] = new int [2];
+        int x = 0;
+        for(int i = 0;i<N;i++)
+        {
+            x = x^Arr[i];
         }
+        int c = x & (-x);
         
-        // Find the rightmost set bit in the XOR result
-        int rightmostSetBit = xor & ~(xor-1);
-        
-        int x1 = 0;
-        int x2 = 0;
-        
-        // Divide array elements into two groups based on the rightmost set bit
-        for (int i = 0; i < N; i++) {
-            if ((Arr[i] & rightmostSetBit) == 0) {
-                x1 ^= Arr[i];
-            } else {
-                x2 ^= Arr[i];
+        int x1 = 0,x2 = 0;
+        for(int i = 0;i<N;i++)
+        {
+            if((Arr[i]&c)==0)
+            {
+                x1 = x1^Arr[i];
+            }
+            else
+            {
+                x2 = x2^Arr[i];
             }
         }
-        
         if(x1<x2)
         {
             int temp = x1;
-            x1 = x2;
+            x1  =x2;
             x2 = temp;
         }
         return new int[]{x1,x2};
-        
     }
 }
