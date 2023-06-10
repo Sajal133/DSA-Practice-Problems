@@ -39,6 +39,10 @@ class gfg
 class Solution{
     static int searchInSorted(int arr[], int N, int K)
     {
+        if(N<2)
+        {
+            return -1;
+        }
         for(int i = 0;i<N;i++)
         {
             if(arr[i]==K)
@@ -46,6 +50,6 @@ class Solution{
                 return 1;
             }
         }
-        return -1;
+       return -1; 
     }
 }
