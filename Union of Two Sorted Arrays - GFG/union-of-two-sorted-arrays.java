@@ -55,7 +55,7 @@ class Solution
     public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m)
     {
         // add your code here
-        HashSet<Integer> u = new HashSet<>();
+        Set<Integer> u = new TreeSet<>();
         ArrayList<Integer> res = new ArrayList<>();
         
         for(int i = 0;i<n;i++)
@@ -70,7 +70,6 @@ class Solution
         {
             res.add(it);
         }
-        Collections.sort(res);
         return res;
     }
 }
