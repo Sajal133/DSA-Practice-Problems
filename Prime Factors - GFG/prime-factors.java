@@ -29,7 +29,7 @@ class GFG
 
 class Solution {
     public int[] AllPrimeFactors(int n) {
-        Set<Integer> f = new HashSet<>();
+        Set<Integer> f = new TreeSet<>();
 
         // Handle the even factors of N
         while (n % 2 == 0) {
@@ -57,7 +57,6 @@ class Solution {
         for (int factor : f) {
             primeFactors[index++] = factor;
         }
-        Arrays.sort(primeFactors);
         
 
         return primeFactors;
