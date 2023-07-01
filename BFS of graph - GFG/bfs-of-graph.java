@@ -45,7 +45,7 @@ class Solution {
         q.add(0);
         while(!q.isEmpty())
         {
-            Integer node = q.poll();
+            int node = q.poll();
             res.add(node);
             for(int i :adj.get(node))
             {
